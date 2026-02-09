@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>House Price Prediction</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            font-family: 'Poppins', sans-serif;
+        }
+        .card {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-weight: 600;
+        }
+        input {
+            margin-bottom: 12px;
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card text-center">
+        <h1>🏠 House Price Prediction</h1>
+        <p class="text-muted">Enter house details below</p>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" name="bedrooms" class="form-control" placeholder="Bedrooms">
+                </div>
+                <div class="col">
+                    <input type="text" name="bathrooms" class="form-control" placeholder="Bathrooms">
+                </div>
+            </div>
+
+            <input type="text" name="sqft_living" class="form-control" placeholder="Sqft Living">
+            <input type="text" name="sqft_lot" class="form-control" placeholder="Sqft Lot">
+            <input type="text" name="floors" class="form-control" placeholder="Floors">
+            <input type="text" name="waterfront" class="form-control" placeholder="Waterfront (0 or 1)">
+            <input type="text" name="view" class="form-control" placeholder="View">
+            <input type="text" name="condition" class="form-control" placeholder="Condition">
+            <input type="text" name="sqft_above" class="form-control" placeholder="Sqft Above">
+            <input type="text" name="sqft_basement" class="form-control" placeholder="Sqft Basement">
+            <input type="text" name="yr_built" class="form-control" placeholder="Year Built">
+            <input type="text" name="yr_renovated" class="form-control" placeholder="Year Renovated">
+            <input type="text" name="city" class="form-control" placeholder="City (Encoded)">
+            <input type="text" name="country" class="form-control" placeholder="Country (Encoded)">
+
+            <button class="btn btn-success btn-block mt-3">Predict Price</button>
+        </form>
+
+        <h3 class="mt-4 text-primary">
+            <strong>{{ prediction_text }}</strong>
+        </h3>
+
+        <div class="footer-text">
+            <p>Project By <strong>Sohail</strong></p>
+            <p>Data Analyst & Machine Learning</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# MINI_PROJECT_1
+
 <h1 align="center">🏠 House Price Prediction Project</h1>
 
 <p align="center">
